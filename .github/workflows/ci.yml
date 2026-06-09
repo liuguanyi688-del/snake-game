@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  static-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate static files
+        shell: bash
+        run: |
+          test -f index.html
+          test -f README.md
+          grep -q "<canvas" index.html
+          grep -q "https://liuguanyi688-del.github.io/snake-game/" README.md
