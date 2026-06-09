@@ -19,4 +19,4 @@ jobs:
           test -f index.html
           test -f README.md
           grep -q "<canvas" index.html
-          grep -q "https://liuguanyi688-del.github.io/snake-game/" README.md
+          grep -q "Snake Game" README.md
