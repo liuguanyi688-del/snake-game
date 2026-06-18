@@ -2,6 +2,14 @@
 
 A single-file browser snake game built with HTML, CSS, and JavaScript. It is simple enough to read in one sitting, but complete enough to show canvas rendering, keyboard control, scoring, collision detection, and restart flow.
 
+## Live Demo
+
+Play it on GitHub Pages:
+
+```text
+https://liuguanyi688-del.github.io/snake-game/
+```
+
 ## Features
 
 - Canvas-based game board.
@@ -44,3 +52,5 @@ This is a compact frontend practice project. It demonstrates the basic loop used
 ## Deployment
 
 Because it is a static single-file project, it can be deployed directly with GitHub Pages, Vercel, Netlify, or any static file server.
+
+This project is currently published with GitHub Pages from the `main` branch.
