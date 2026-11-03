@@ -1,46 +1,68 @@
 # Snake Game
 
-A single-file browser snake game built with HTML, CSS, and JavaScript. It is simple enough to read in one sitting, but complete enough to show canvas rendering, keyboard control, scoring, collision detection, and restart flow.
+A single-file browser Snake game in vanilla HTML, CSS and JavaScript. No build step, no dependencies, no framework — open `index.html` and play.
+
+**[▶ Play in the browser](https://liuguanyi688-del.github.io/snake-game/)**
+
+![Snake Game](preview.png)
 
 ## Features
 
-- Canvas-based game board.
-- Keyboard-controlled snake movement.
-- Food spawning and score tracking.
-- Best score display.
-- Wall and self-collision game over logic.
-- Restart button.
-- No build tools and no dependencies.
+- Canvas-rendered board with a glowing neon theme.
+- Arrow-key controls plus an on-screen D-pad for touch devices.
+- Food spawning, score tracking and a persistent best score (`localStorage`).
+- Wall and self-collision detection with a restart flow.
+- Responsive layout that works on desktop and mobile.
+- Entire game — markup, styles and logic — in one readable file.
+
+## Controls
+
+| Input | Action |
+|---|---|
+| ↑ ↓ ← → | Move the snake |
+| Start / Restart button | Start a new round |
+| On-screen arrows | Move (touch devices) |
 
 ## Run Locally
 
-Open `index.html` in a browser.
+```bash
+git clone https://github.com/liuguanyi688-del/snake-game.git
+cd snake-game
+open index.html        # macOS
+# start index.html     # Windows
+# xdg-open index.html  # Linux
+```
 
-Or from PowerShell:
+Or serve it over HTTP:
 
-```powershell
-cd D:\sjk\snake-game
-start .\index.html
+```bash
+python3 -m http.server 8000
+# http://localhost:8000
 ```
 
 ## Project Structure
 
 ```text
 snake-game/
-├─ index.html   # HTML, CSS, and JavaScript in one file
+├─ index.html   # markup, styles and game logic
+├─ preview.png  # screenshot
 └─ README.md
 ```
 
-## Why This Project Is Useful
+## How It Works
 
-This is a compact frontend practice project. It demonstrates the basic loop used by many browser games:
+The game is a small fixed-timestep loop:
 
-1. Read input.
-2. Update game state.
-3. Detect collisions.
-4. Render the next frame.
-5. Repeat on a timer.
+1. Read keyboard or touch input.
+2. Advance the snake by one cell on each tick.
+3. Check collisions with walls, the body and food.
+4. Update the score and redraw the canvas.
+5. Schedule the next tick.
 
 ## Deployment
 
-Because it is a static single-file project, it can be deployed directly with GitHub Pages, Vercel, Netlify, or any static file server.
+The project is static, so it works on GitHub Pages, Vercel, Netlify or any file server. This repository is already published at <https://liuguanyi688-del.github.io/snake-game/>.
+
+## License
+
+[MIT](LICENSE)
